@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/loginchoice.css'%}" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  {% block js_block %}
+  <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+  {% endblock %}
+  <title>PrescribeMe</title>
+</head>
+
+<body id='bg' style="background-image:url('{% static 'prescribeme/images/doctor and patient.jpg'%}');">
+
+  <div class="navbar">
+    <div class="icon">
+      <h2 class="logo">PrescribeMe</h2>
+
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="#about-us">ABOUT</a></li>
+        <li><a href="#">SERVICE</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="/login">Login/SignUp</a></li>
+      </ul>
+    </div>
+
+    <div class="loginbox">
+      <img class="avatar" src="{% static 'prescribeme/images/2024644_login_user_avatar_person_users_icon.png' %}"
+        alt="login_icon" />
+      <h1>Login</h1>
+      <div>
+        {% for message in messages %}
+        <h3> {{message}} </h3>
+        {% endfor %}
+      </div>
+      <form action="log" method="post">
+        {% csrf_token %}
+        <p>Username</p>
+        <input type="text" name="username" placeholder="Enter Username" />
+        <p>Password</p>
+        <input type="password" name="password" placeholder="Enter Password" id="myInput" />
+        <span class="eye" onclick="myFunction()">
+          <i id="hide1" class="fa-solid fa-eye"></i>
+          <i id="hide2" class="fa-solid fa-eye-slash"></i>
+        </span>
+        <input type="submit" name="" value="Login" />
+        <a href="#">Forgot your Password?</a><br />
+        <a href="/register">Don't have an account</a>
+      </form>
+
+    </div>
+</body>
+
+</html>

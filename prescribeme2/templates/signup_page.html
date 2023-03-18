@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/signup.css'%}" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  {% block js_block %}
+  <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+  {% endblock %}
+  <title>PrescribeMe</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="icon">
+      <h2 class="logo">PrescribeMe</h2>
+
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="#about-us">ABOUT</a></li>
+        <li><a href="#">SERVICE</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <!-- <li><a href="/register/login">Login/SignUp</a></li> -->
+      </ul>
+    </div>
+
+    <div class="doctor_card"
+      style="background-image:url('{% static 'prescribeme/images/depositphotos_26768615-stock-illustration-doctor-kids.jpg'%}');">
+      <a href="{% url 'docreg' %}"> <button class="btn">
+          <p>Are you a Doctor</p>
+        </button></a>
+    </div>
+    <div class="patient_card"
+      style="background-image:url('{% static 'prescribeme/images/depositphotos_298369910-free-stock-illustration-leg-fracture-guy.jpg'%}');">
+      <a href="/patreg/register"><button class="btn">
+          <p>Are you a Patient</p>
+        </button>
+      </a>
+    </div>
+</body>
+
+</html>

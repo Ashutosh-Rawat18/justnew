@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/prescription.css'%}" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img class="logo" src="{% static 'prescribeme/images/logo.png' %}">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="#about-us">ABOUT</a></li>
+                    <li><a href="/dashboard">Dasboard</a></li>
+                    <!-- <li><a href="/prescription">Prescription</a></li>
+                    <li><a href="./loginchoice.html">Login/SignUp</a></li> -->
+                </ul>
+            </div>
+
+            <div class="prescription">
+                <li class="new_text">Edit Prescription</li>
+            </div>
+
+            <div class="box">
+                <div class="container">
+                    <form method="POST" action="/dashboard/Update/{{Premodel.id}}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="name">
+                                <span class="namebox">Doctor Name</span>
+                                <input class="input-box" type="text" name="docname" value="{{Premodel.docname}}">
+                            </div>
+                            <div class="patient-id">
+                                <span class="namebox">Symptoms</span>
+                                <input class="input-id-box" type="text" name="symptom" value="{{Premodel.symptom}}">
+                            </div>
+                            <div class=" patient-id">
+                                <span class="namebox">Date</span>
+                                <input class="input-id-box" type="text" name="dates" value="{{Premodel.dates}}">
+                            </div>
+                            <ul class=" prescription-box">
+                                <li>
+                                    <div class="pres">
+                                        <span class="namebox">Medicine1</span>
+                                        <input class="input-id-box-prescription" type="text" name="medicine1"
+                                            value="{{Premodel.medicine1}}">
+                                    </div>
+                                    <div class=" pres">
+                                        <span class="namebox">Medicine2</span>
+                                        <input class="input-id-box-prescription" type="text" name="medicine2"
+                                            value="{{Premodel.medicine2}}">
+                                    </div>
+                                    <!-- <div class=" pres">
+                                        <span class="namebox">Medicine3</span>
+                                        <input class="input-id-box-prescription" type="text"
+                                            placeholder="Enter the name of the medicine" required>
+                                    </div>
+                                    <div class="pres">
+                                        <span class="namebox">Medicine4</span>
+                                        <input class="input-id-box-prescription" type="text"
+                                            placeholder="Enter the name of the medicine" required>
+                                    </div> -->
+                                </li>
+                                <li>
+                                    <div class="pres">
+                                        <span class="namebox">Dosage</span>
+                                        <input class="input-id-box-prescription" type="text" name="when1"
+                                            value="{{Premodel.when1}}">
+                                    </div>
+                                    <div class="pres">
+                                        <span class="namebox">Dosage</span>
+                                        <input class="input-id-box-prescription" type="text" name="when2"
+                                            value="{{Premodel.when2}}">
+                                    </div>
+                                    <!-- <div class="pres">
+                                    <span class="namebox">Dosage</span>
+                                    <input class="input-id-box-dosage" type="text" placeholder="Enter the Dosage"
+                                        required>
+                                    </div>
+                                    <div class="pres">
+                                    <span class="namebox">Dosage</span>
+                                    <input class="input-id-box-dosage" type="text" placeholder="Enter the Dosage"
+                                        required>
+                                    </div> -->
+                                </li>
+                            </ul>
+                            <div class="submit">
+                                <input type="submit" value="Submit" />
+                            </div>
+                            <td>
+                                {% if messages %}
+                                {% for mess in messages %}
+                                <b style="color: green;">{{mess}}</b>
+                                {% endfor %}
+                                {% endif %}
+                            </td>
+                    </form>
+
+                </div>
+                <footer class="footer">
+                    <p class="copyright">Copyrights &copy; PrescribeMe</p>
+                </footer>
+            </div>
+
+
+
+
+            <!-- <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div> -->
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+    
+
+}
+
+
+.main{
+    width: 100%;
+    height: 100%;
+   
+}
+
+.navbar{
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    background:white ;
+    position: sticky;
+    top: 0;
+    
+}
+
+.icon{
+    width: 100px;
+    float: left;
+    height: 100px;
+}
+
+.logo{
+   height: 100px;
+   width: 100px;
+   margin-left: 50px;
+    float: left;
+    padding-top: 10px;
+}
+
+.menu{
+    width: 600px;
+    float: left;
+    height: 100px;
+    margin-left: 250px;
+   
+    
+}
+
+ul{
+    float: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #037c8b;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.6s ease-in-out;
+}
+
+ul li a:hover{
+    color: #16b1c5;
+}
+.prescription
+{
+    height: 150px;
+    width: 100%;
+
+    background-color: grey;
+    position: relative;
+    top: 150px;
+
+
+}
+
+.new_text
+{
+    position: absolute;
+
+    left: 30%;
+    width: 200px;
+    font-size: 50px;
+    text-align: center;
+    padding-right: 450px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* prescription form */
+.box
+{
+    padding-top: 200px;
+}
+.name
+{
+    height: 100px;
+    width: 300px;
+
+    text-align: left;
+    padding-left: 30px;
+    
+
+    top: 400px;
+    
+}
+.patient-id
+{
+    padding-left: 30px;
+}
+
+
+.namebox
+{
+    height: 100px;
+    width: 220px;
+    padding-top: 200px;
+    margin-bottom: 10px;
+
+    font-size: 26px;
+    text-align: left;
+}
+
+.input-box
+{
+    margin-top: 10px;
+    border:solid 3px #aacfe4;
+    font-size: 20px;
+}
+
+.input-id-box
+{
+    display: block;
+    font-size:11px;
+    padding:4px 2px;
+    border:solid 3px #aacfe4;
+    width:200px;
+    margin:2px 0 20px 0;
+    font-size: 20px;
+}
+
+
+/* Prescription box*/
+
+.prescription-box
+{
+    height: 550px;
+    width: 1000px;
+
+    background-color: #c7ffff;
+    position: relative;
+
+    top: 50px;
+    left: 200px;
+    right: 300px;
+    bottom: 100px;
+
+    border-radius: 20px;
+}
+
+.input-id-box-prescription
+{
+    display: block;
+    font-size:11px;
+    padding:4px 2px;
+    border:solid 3px #aacfe4;
+    width:400px;
+    margin:2px 0 20px 0;
+    font-size: 20px;
+}
+.pres
+{
+    position: relative;
+    width: 400px;
+    text-align: left;
+
+    
+}
+.input-id-box-dosage
+{
+    display: block;
+    font-size:11px;
+    padding:4px 2px;
+    border:solid 3px #aacfe4;
+    width:200px;
+    margin:2px 0 20px 0;
+    font-size: 20px;
+}
+
+/*Submit button*/
+
+
+form .submit
+{
+    height: 45px;
+    margin: 45px , 0;
+}
+
+form .submit input
+{
+    height: 50px;
+    width: 500px;
+    outline: none;
+    color: #ffff;
+    border: none;
+
+    position: relative;
+    left: 400px;
+    top: -5px;
+
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form .submit input:hover
+{
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+
+}

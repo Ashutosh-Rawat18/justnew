@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <div class="main">
+
+
+        <div class="navigation">
+            <div class="icon">
+                <img class="logo" src="{% static 'prescribeme/images/logo.png' %}">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="{% url 'insertpre' %}">Prescription</a></li>
+                    <!-- <li><a href="./Index.html#about-us">ABOUT</a></li> -->
+                    <li><a href="#">Dasboard</a></li>
+                    <!-- <li><a href="#">CONTACT</a></li>
+                    <li><a href="./loginchoice.html">Login/SignUp</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <center class="table" style="position:relative; padding-top: 200px; padding-left: -100px; font-size:25px;">
+            <table border="1">
+                <tr class="tableclass">
+                    <th>Sr.no.</th>
+                    <th>Doctor name</th>
+                    <th>Symptoms</th>
+                    <th>Date</th>
+                    <th>Medicine1</th>
+                    <th>When</th>
+                    <th>Medicine2</th>
+                    <th>When</th>
+                </tr>
+                {% for result in data %}
+                <tr>
+                    <td>{{result.id}}</td>
+                    <td>{{result.docname}}</td>
+                    <td>{{result.symptom}}</td>
+                    <td>{{result.dates}}</td>
+                    <td>{{result.medicine1}}</td>
+                    <td>{{result.when1}}</td>
+                    <td>{{result.medicine2}}</td>
+                    <td>{{result.when2}}</td>
+                    <td><a href="/dashboard/Edit/{{result.id}}">Edit</a></td>
+                    <td><a href="/dashboard/Delete/{{result.id}}"
+                            onclick="return confirm('Are you sure you want to delete it?')">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </center>
+
+        <!-- </div>
+        <div id="sidebar">
+            <div class="toggle-btn" onclick="show()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="side-contents">
+                <div class="img-area"> <img src="{% static 'prescribeme/images/Asia.jpg' %}"></div>
+
+                <div class="details">
+                    <label>Username: </label><label>Mukesh</label><br>
+                    <label>patientID: </label><label>0908</label>
+                </div>
+            </div>
+        <!-- </div> --> -->
+        <footer class="footer">
+            <p class="copyright">Copyrights &copy; PrescribeMe</p>
+        </footer>
+
+    </div>
+
+    <!-- <script>
+            function show() {
+                document.getElementById("sidebar").classList.toggle("active");
+            }
+        </script> -->
+</body>
+
+</html>

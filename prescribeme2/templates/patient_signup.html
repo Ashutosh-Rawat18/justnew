@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/patient_signup.css'%}" />
+  <title>PrescribeMe</title>
+</head>
+
+<body id='bg'
+  style="background-image:url('{% static 'prescribeme/images/GettyImages-961288154-e1561759666671.jpg'%}');">
+  <div class="navbar">
+    <div class="icon">
+      <h2 class="logo">PrescribeMe</h2>
+
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="#about-us">ABOUT</a></li>
+        <li><a href="#">SERVICE</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="/login">Login/SignUp</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="container">
+        <div class="title">Registration</div>
+        <form action="register" method="post">
+          <div class="user-details">
+            {% csrf_token %}
+            <div class="input-box">
+              <span class="details">User name</span>
+              <input type="text" name="username" placeholder="Enter your UserName" required />
+            </div>
+            <div class="input-box">
+              <span class="details">First name</span>
+              <input type="text" name="firstname" placeholder="Enter your FirstName" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Last name</span>
+              <input type="text" name="lastname" placeholder="Enter your LastName" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input type="email" name="email" placeholder="Enter your Email" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Create Password</span>
+              <input type="password" name="password1" placeholder="Enter your password" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              <input type="password" name="password2" placeholder="Confirm Password" required />
+            </div>
+            <!-- <div class="input-box">
+              <span class="details">Address</span>
+              <input type="text" name="address" placeholder="Enter your Address" required />
+            </div> -->
+            <!-- <div class="input-box">
+              <span class="details">User name</span>
+              <input type="text" name="username" placeholder="Enter your UserName" required />
+            </div> -->
+            <!-- <div class="input-box">
+              <span class="details">Date of birth</span>
+              <input type="date" required />
+            </div> -->
+          </div>
+          <div class="button">
+            <input type="submit" />
+          </div>
+        </form>
+        <div>
+          {% for message in messages %}
+          <h3> {{message}} </h3>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
